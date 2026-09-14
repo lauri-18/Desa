@@ -27,7 +27,7 @@ Readme
 [Ver video en YouTube]https://youtube.com/shorts/GOXbr2vivvE?si=4X2x-ovMDbM5Vy9E
 
 Evidencias de armado
-<img width="899" height="1599" alt="foto3" src="https://github.com/user-attachments/assets/f438ccdf-2e45-4a85-af85-28c86ede3892" />
+
 <img src="Diagrama/foto1.jpeg" width="300">
 
 Reporte
