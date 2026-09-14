@@ -31,7 +31,7 @@ Evidencias de armado
 <img src="Diagrama/foto1.jpeg" width="300">
 
 Reporte
-Incluye: Resultados.pdf
+Incluye: [arduino.pdf](https://github.com/user-attachments/files/32205093/arduino.pdf)
 
 Gráficas (insertar imagen o link)
 Tablas de datos
