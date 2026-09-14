@@ -19,7 +19,7 @@ Diagrama del circuito
 
 
 Código
-led13.ino
+Main.txt
 
 Video del funcionamiento
 Readme
