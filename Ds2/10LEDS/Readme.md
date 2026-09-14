@@ -19,7 +19,7 @@ Diagrama del circuito
 
 
 Código
-Main.txt
+Ds2/10LEDS/codigo/Main.txt
 
 Video del funcionamiento
 Readme
