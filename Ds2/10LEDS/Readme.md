@@ -20,6 +20,7 @@ Diagrama del circuito
 
 Código
 https://github.com/lauri-18/Desa/blob/main/Ds2/10LEDS/codigo/Main.txt
+
 Video del funcionamiento
 Readme
 
