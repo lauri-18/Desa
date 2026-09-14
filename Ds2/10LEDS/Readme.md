@@ -1,5 +1,5 @@
 Nombre del proyecto
-Parpadeo de LED con Arduino (Blink)
+10 led
 
 Descripción
 el objetivo de este codigo expone como prender y apagar un led
@@ -12,8 +12,8 @@ Enumera todos los componentes usados:
 
 Arduino Uno
 Protoboar
-Led
-Cables Dupont
+10 led
+Cables macho macho
 Resistencia 220 ohms
 Diagrama del circuito
 
@@ -27,6 +27,7 @@ Readme
 [Ver video en YouTube]https://youtube.com/shorts/GOXbr2vivvE?si=4X2x-ovMDbM5Vy9E
 
 Evidencias de armado
+<img width="899" height="1599" alt="foto3" src="https://github.com/user-attachments/assets/f438ccdf-2e45-4a85-af85-28c86ede3892" />
 
 
 Reporte
@@ -36,13 +37,9 @@ Gráficas (insertar imagen o link)
 Tablas de datos
 Observaciones sobre el comportamiento del sistema
 Conclusiones
-La práctica permitió reforzar el uso de las funciones básicas de salida digital y temporización en Arduino (digitalWrite y delay), así como comprender el funcionamiento eléctrico de un protoboard: la importancia de que los componentes queden conectados en serie para que la resistencia cumpla su función de limitar la corriente. Este tipo de error es común en simuladores como Tinkercad y resalta la importancia de verificar el camino real de la corriente, no solo la presencia física de los componentes en el circuito.
-
+los 10 led prenden con el codigo C++
 Resultados
 Resultados.pdf
 
 Este documento contiene la descripción de la práctica, objetivos y procedimientos realizados.
 
-Reporte técnico estilo IEEE (PDF)
-Datos CSV (si aplica)
-Diagramas adicionales
