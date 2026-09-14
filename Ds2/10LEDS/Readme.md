@@ -10,7 +10,7 @@ Programar y simular en Arduino el encendido y apagado intermitente (parpadeo) de
 Material utilizado
 Enumera todos los componentes usados:
 
-Arduino Uno R4 WiFi
+Arduino Uno
 Protoboar
 Led
 Cables Dupont
