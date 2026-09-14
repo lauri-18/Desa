@@ -28,7 +28,7 @@ Readme
 
 Evidencias de armado
 <img width="899" height="1599" alt="foto3" src="https://github.com/user-attachments/assets/f438ccdf-2e45-4a85-af85-28c86ede3892" />
-
+<img src="Diagrama/foto.png" width="300">
 
 Reporte
 Incluye: Resultados.pdf
