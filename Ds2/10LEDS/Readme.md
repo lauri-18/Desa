@@ -30,7 +30,7 @@ Evidencias de armado
 <img src="Diagrama/foto1.jpeg" width="300">
 
 Reporte
-[arduinopdf.pdf](Repote/arduinopdf.pdf)
+[arduinopdf.pdf](Reporte/arduinopdf.pdf)
 
 
 Gráficas (insertar imagen o link)
