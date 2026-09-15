@@ -19,7 +19,7 @@ Diagrama del circuito
 
 
 Código
-[main.txt](codigo/readme.txt)
+[Main.txt](codigo/readme.txt)
 Video del funcionamiento
 Readme
 
