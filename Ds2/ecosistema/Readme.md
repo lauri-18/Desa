@@ -31,7 +31,7 @@ Gráficas (insertar imagen o link)
 Tablas de datos
 Observaciones sobre el comportamiento del sistema
 Conclusiones
-los 10 led prenden con el codigo C++
+la automatizacion funciona
 Resultados
 Resultados.pdf
 
