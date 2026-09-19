@@ -21,7 +21,7 @@ Readme
 
 Evidencias de armado
 
-<img src="imagenes/make ec.pnj" width="300">
+<img src="imagenes/Captura de pantalla (117).PNJ" width="300">
 
 resultados
 [Resumen_Chatbot_Ecosistema](resultados/Resumen_Chatbot_Ecosistema)
