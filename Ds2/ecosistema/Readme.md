@@ -21,10 +21,10 @@ Readme
 
 Evidencias de armado
 
-<img src="Diagrama/Captura de pantalla(117).pnj" width="300">
+<img src="imagenes/make ec.pnj" width="300">
 
 Reporte
-[arduinopdf.pdf](Reporte/arduinopdf.pdf)
+[arduinopdf.pdf](resultado/arduinopdf.pdf)
 
 
 Gráficas (insertar imagen o link)
