@@ -24,7 +24,7 @@ Evidencias de armado
 <img src="imagenes/Captura de pantalla (117).pnj" width="300">
 
 resultados
-[Resumen_Chatbot_Ecosistema](resultados/Resumen_Chatbot_Ecosistema)
+[Resumen_Chatbot_Ecosistema.pdf](resultados/Resumen_Chatbot_Ecosistema.pdf)
 
 
 Gráficas (insertar imagen o link)
