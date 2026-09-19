@@ -1,21 +1,14 @@
-Nombre del proyecto
-10 led
+##Nombre del proyecto
+ecosistema
 
-Descripción
+##Descripción
 el objetivo de este codigo expone como prender y apagar un led
 
-Objetivos de aprendizaje
-Programar y simular en Arduino el encendido y apagado intermitente (parpadeo) de un LED conectado al pin digital 13, utilizando la función delay() para generar un efecto visualmente perceptible.
+##Objetivos de aprendizaje
+Que el programa detecte que tipo de planta es, si es productora o no y que produce
 
-Material utilizado
-Enumera todos los componentes usados:
-
-Arduino Uno
-Protoboar
-10 led
-Cables macho macho
-Resistencia 220 ohms
-Diagrama del circuito
+##Material utilizado
+Make
 
 
 Código
