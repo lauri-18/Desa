@@ -24,7 +24,7 @@ Evidencias de armado
 <img src="imagenes/make ec.pnj" width="300">
 
 Reporte
-[arduinopdf.pdf](resultado/arduinopdf.pdf)
+[Resumen_Chatbot_Ecosistema](resultados/Resumen_Chatbot_Ecosistema)
 
 
 Gráficas (insertar imagen o link)
