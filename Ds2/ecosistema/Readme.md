@@ -21,7 +21,7 @@ Readme
 
 Evidencias de armado
 
-<img src="Diagrama/foto1.jpeg" width="300">
+<img src="Diagrama/Captura de pantalla(117).pnj" width="300">
 
 Reporte
 [arduinopdf.pdf](Reporte/arduinopdf.pdf)
