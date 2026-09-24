@@ -1,13 +1,13 @@
-##Nombre del proyecto
+## Nombre del proyecto
 ecosistema
 
-##Descripción
+## Descripción
 el objetivo de este codigo expone como prender y apagar un led
 
-##Objetivos de aprendizaje
+## Objetivos de aprendizaje
 Que el programa detecte que tipo de planta es, si es productora o no y que produce
 
-##Material utilizado
+## Material utilizado
 Make
 
 
