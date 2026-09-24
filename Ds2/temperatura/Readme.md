@@ -13,6 +13,7 @@ led
 3 cables hembra
 protoboard
 arduino
+sensor DHT11
 
 
 Código
