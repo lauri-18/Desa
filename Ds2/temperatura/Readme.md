@@ -31,7 +31,7 @@ Readme
 
 Evidencias de armado
 
-<img src="imagenes/Captura de pantalla (118).png" width="350">
+<img src="imagenes/tola.jpeg" width="350">
 
 resultados
 [reporte_dht11_led 2.pdf](resultados/reporte_dht11_led%202.pdf)
