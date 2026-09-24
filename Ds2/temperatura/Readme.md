@@ -9,10 +9,15 @@ Que el programa detecte si la temperatura sube o no
 
 ## Material utilizado
 codigo
+
 led
+
 3 cables hembra
+
 protoboard
+
 arduino
+
 sensor DHT11
 
 
