@@ -22,7 +22,7 @@ cables
 Video del funcionamiento
 Readme
 
-[Ver video en YouTube](https://youtube.com/shorts/hw35ivgJxYw?si=OTT-ZVyDV9z-fCjG)
+[Ver video en YouTube](https://youtube.com/shorts/hUTwtaCsEco?si=hhx4Hf--2_yjuBC1)
 
 Evidencias de armado
 
