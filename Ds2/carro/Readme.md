@@ -26,10 +26,10 @@ Readme
 
 Evidencias de armado
 
-<img src="imagenes/tola.jpeg" width="350">
+<img src="imagenes/carro.jpeg" width="350">
 
 resultados
-[reporte_dht11_led 2.pdf](resultados/reporte_dht11_led%202.pdf)
+[Reporte_Carrito_Solar.pdf](resultados/Reporte_Carrito_Solar.pdf)
 
 
 Gráficas (insertar imagen o link)
