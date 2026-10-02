@@ -2,7 +2,7 @@
 CARRO SOLAR
 
 ## Descripción
-el objetivo 
+el objetivo es que el carro funcione con luz solar
 
 ## Objetivos de aprendizaje
 Que el carro avance con luz solar
