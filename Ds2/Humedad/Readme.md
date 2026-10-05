@@ -41,6 +41,5 @@ la automatizacion funciona
 Resultados
 Resultados.pdf
 
-Este documento contiene la descripc
 ](https://youtube.com/shorts/H6F9e3RdiFM?si=GComa02lk6osWoHU)
 
