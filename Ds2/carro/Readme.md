@@ -1,5 +1,5 @@
 [## Nombre del proyecto
-HUMEDAD
+CARRO SOLAR
 
 ## Descripción
 el objetivo es que el carro funcione con luz solar
