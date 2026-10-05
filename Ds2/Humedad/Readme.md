@@ -17,7 +17,8 @@ proto
 
 sensor de humedad en tierra
 
-
+Código
+[Readme.txt](codigo/Readme.txt))
 
 Video del funcionamiento
 Readme
