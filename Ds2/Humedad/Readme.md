@@ -30,7 +30,7 @@ Evidencias de armado
 <img src="imagenes/humed.jpeg" width="350">
 
 resultados
-[Reporte_Monitor_Humedad_Arduino_UNO_R3.pdf](resultados/Reporte_Monitor_Humedad_Arduino_UNO_R3.pdf)
+[Reporte_Monitor_Humedad_Arduino_UNO_R3.pdf](reporte/Reporte_Monitor_Humedad_Arduino_UNO_R3.pdf)
 
 
 Gráficas (insertar imagen o link)
