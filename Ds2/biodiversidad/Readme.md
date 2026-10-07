@@ -15,7 +15,7 @@ Código
 Video del funcionamiento
 Readme
 
-[Ver video en YouTube](https://youtube.com/shorts/H6F9e3RdiFM?si=GComa02lk6osWoHU))
+[Ver video en YouTube](https://youtube.com/shorts/rFwJJH_eBk0?si=VzWQLLPnVAff56Lq))
 
 Evidencias de armado
 
