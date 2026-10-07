@@ -22,7 +22,7 @@ Evidencias de armado
 <img src="imagenes/Captura%20de%20pantalla(149).png" width="350">
 
 resultados
-[Reporte%202Técnico.pdf](resultados/Reporte%202Técnico.pdf)
+[Reporte%20Técnico.pdf](resultados/Reporte%20Técnico.pdf)
 
 
 Gráficas (insertar imagen o link)
