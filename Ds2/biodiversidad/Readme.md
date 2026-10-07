@@ -19,7 +19,7 @@ Readme
 
 Evidencias de armado
 
-<img src="imagenes/Captura de pantalla(149).png" width="350">
+<img src="imagenes/Captura%20de%20pantalla(149).png" width="350">
 
 resultados
 [Reporte Técnico.pdf](resultados/Reporte Técnico.pdf)
