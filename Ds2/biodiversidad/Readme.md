@@ -19,10 +19,10 @@ Readme
 
 Evidencias de armado
 
-<img src="imagenes/humed.jpeg" width="350">
+<img src="imagenes/Captura de pantalla(149).png" width="350">
 
 resultados
-[Reporte_Monitor_Humedad_Arduino_UNO_R3.pdf](reporte/Reporte_Monitor_Humedad_Arduino_UNO_R3.pdf)
+[Reporte Técnico.pdf](reporte/Reporte Técnico.pdf)
 
 
 Gráficas (insertar imagen o link)
