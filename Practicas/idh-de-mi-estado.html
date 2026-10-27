@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IDH de mi estado</title>
+<style>
+  :root {
+    --niebla: #e7f0ea;
+    --pino: #14382e;
+    --hoja: #3d7c4f;
+    --agua: #2a7b8c;
+    --tierra: #6a5a43;
+    --papel: #f7fbf8;
+    --linea: #b9cfc1;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--pino);
+    background:
+      radial-gradient(1200px 500px at 85% -10%, #cfe5dc 0%, transparent 60%),
+      linear-gradient(180deg, var(--niebla) 0%, #dbe9e1 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 40px 20px 56px;
+  }
+  h1 {
+    font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+    font-size: clamp(2.2rem, 7vw, 3.4rem);
+    line-height: 1.05;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+    color: var(--pino);
+  }
+  .intro {
+    margin: 0 0 28px;
+    padding-left: 16px;
+    border-left: 4px solid var(--hoja);
+    max-width: 60ch;
+  }
+  .intro p { margin: 0 0 10px; }
+  .intro p:last-child { margin: 0; }
+  .consulta {
+    background: var(--papel);
+    border: 1px solid var(--linea);
+    border-radius: 14px;
+    padding: 22px;
+  }
+  label { display: block; font-weight: 600; margin-bottom: 8px; }
+  select, button {
+    font: inherit;
+    width: 100%;
+    border-radius: 10px;
+    min-height: 48px;
+  }
+  select {
+    padding: 10px 12px;
+    border: 1.5px solid var(--linea);
+    background: #fff;
+    color: var(--pino);
+  }
+  button {
+    margin-top: 14px;
+    border: 0;
+    background: var(--hoja);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  button:hover:not(:disabled) { background: var(--pino); }
+  button:disabled { background: #8aa896; cursor: not-allowed; }
+  select:focus-visible, button:focus-visible {
+    outline: 3px solid var(--agua);
+    outline-offset: 2px;
+  }
+  #resultado {
+    display: none;
+    margin-top: 18px;
+    padding: 16px 18px;
+    background: #fff;
+    border: 1px solid var(--linea);
+    border-left: 5px solid var(--agua);
+    border-radius: 10px;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+  }
+  #resultado.visible { display: block; }
+  #resultado.error { border-left-color: #a8472f; color: #6e2a19; }
+  footer { margin-top: 28px; font-size: .85rem; color: var(--tierra); }
+  @media (max-width: 480px) {
+    main { padding-top: 28px; }
+    .consulta { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>IDH de mi estado</h1>
+
+  <div class="intro">
+    <p>El Índice de Desarrollo Humano (IDH) es una medida de las Naciones Unidas que resume qué tan bien viven las personas de un lugar. Combina tres cosas: una vida larga y saludable, acceso a educación y un nivel de vida digno.</p>
+    <p>Va de 0 a 1: mientras más cerca de 1, mayor es el desarrollo humano.</p>
+  </div>
+
+  <section class="consulta">
+    <label for="entidad">Elige tu entidad federativa</label>
+    <select id="entidad">
+      <option value="" selected disabled>Selecciona una entidad</option>
+    </select>
+    <button id="consultar" type="button">Consultar</button>
+    <div id="resultado" role="status" aria-live="polite"></div>
+  </section>
+
+  <footer>Los datos se obtienen al momento de tu consulta.</footer>
+</main>
+
+<script>
+  // Pega aquí la URL de tu webhook de Make (Custom webhook).
+  const WEBHOOK_URL = "https://hook.us2.make.com/42mh1kiw5avotkfsrwmnndmceucxfayy";
+
+  const ENTIDADES = [
+    "Aguascalientes", "Baja California", "Baja California Sur", "Campeche",
+    "Chiapas", "Chihuahua", "Ciudad de México", "Coahuila", "Colima",
+    "Durango", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "México",
+    "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla",
+    "Querétaro", "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sonora",
+    "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas"
+  ];
+
+  const select = document.getElementById("entidad");
+  const boton = document.getElementById("consultar");
+  const caja = document.getElementById("resultado");
+
+  ENTIDADES.forEach(function (nombre) {
+    const op = document.createElement("option");
+    op.value = nombre;
+    op.textContent = nombre;
+    select.appendChild(op);
+  });
+
+  function mostrar(texto, esError) {
+    caja.textContent = texto;
+    caja.className = "visible" + (esError ? " error" : "");
+  }
+
+  boton.addEventListener("click", async function () {
+    if (!select.value) {
+      mostrar("Selecciona una entidad federativa para consultar.", true);
+      return;
+    }
+
+    boton.disabled = true;
+    boton.textContent = "Consultando...";
+    mostrar("Consultando...", false);
+
+    try {
+      const respuesta = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        body: new URLSearchParams({ entidad: select.value })
+      });
+      if (!respuesta.ok) throw new Error("HTTP " + respuesta.status);
+      const texto = await respuesta.text();
+      mostrar(texto, false);
+    } catch (err) {
+      mostrar("No se pudo obtener la información, intenta de nuevo.", true);
+    } finally {
+      boton.disabled = false;
+      boton.textContent = "Consultar";
+    }
+  });
+</script>
+</body>
+</html>
