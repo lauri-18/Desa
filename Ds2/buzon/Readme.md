@@ -1,14 +1,19 @@
 ## Nombre del proyecto
-ecosistema
+Buzon ciudadano con folio
 
 ## Descripción
-el objetivo de este codigo expone como prender y apagar un led
+Que el alumno identifique qué organizaciones de su comunidad atienden los problemas ambientales y
+construya, sin programar, un buzón ciudadano automatizado que registre reportes con fecha, usuario y
+folio, para reflexionar sobre el valor de la participación ciudadana formal.
 
 ## Objetivos de aprendizaje
-Que el programa detecte que tipo de planta es, si es productora o no y que produce
+Que el programa identifique las organizaciones
 
 ## Material utilizado
-Make
+• Celular con Telegram instalado.
+• Cuenta de Make del curso (plan Pro).
+• Cuenta de Google para usar Google Sheets.
+• Computadora con navegador.
 
 
 Código
