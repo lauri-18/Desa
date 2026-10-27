@@ -1,19 +1,23 @@
 ## Nombre del proyecto
-Buzon ciudadano con folio
+Página web IDH de mi estado
 
 ## Descripción
-Que el alumno identifique qué organizaciones de su comunidad atienden los problemas ambientales y
-construya, sin programar, un buzón ciudadano automatizado que registre reportes con fecha, usuario y
-folio, para reflexionar sobre el valor de la participación ciudadana formal.
-
+En esta práctica el equipo construye una página web donde cualquier persona elige una entidad y una
+inteligencia artificial le explica su IDH usando únicamente los datos oficiales del PNUD.
 ## Objetivos de aprendizaje
-Que el programa identifique las organizaciones
+Que el alumno interprete el IDH y sus componentes para las entidades de México, construya sin
+programar una página web conectada a Make e IA que consulte datos oficiales, y verifique que la
+información generada por la IA sea fiel a la fuente.
 
 ## Material utilizado
-• Celular con Telegram instalado.
-• Cuenta de Make del curso (plan Pro).
-• Cuenta de Google para usar Google Sheets.
-• Computadora con navegador.
+Computadora con navegador.
+
+Cuenta de Make del curso (plan Pro). La IA usa la conexión Make&#39;s AI Provider; no se necesita
+API key.
+
+Cuenta en una IA generativa gratuita para generar la página.
+
+Cuenta de GitHub con su repositorio de prácticas.
 
 
 Código
