@@ -29,7 +29,7 @@ Evidencias de armado
 <img src="imagenes/Captura de pantalla (158).png" width="300">
 
 resultados
-[Resumen_Chatbot_Ecosistema.pdf](resultados/Resumen_Chatbot_Ecosistema.pdf)
+[estados.pdf](reporte/estados.pdf)
 
 
 Gráficas (insertar imagen o link)
