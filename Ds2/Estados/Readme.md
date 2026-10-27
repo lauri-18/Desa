@@ -26,7 +26,7 @@ Readme
 
 Evidencias de armado
 
-<img src="imagenes/Captura de pantalla (158).png" width="300">
+<img src="imagenes/Captura de pantalla (164).png" width="350">
 
 resultados
 [estados.pdf](reporte/estados.pdf)
