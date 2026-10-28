@@ -34,7 +34,7 @@ Evidencias de armado
 <img src="imagenes/Captura de pantalla (174).png" width="300">
 
 resultados
-[idh.pdf](reporte/idh.pdf)
+[residuo.pdf](reporte/residuo.pdf)
 
 
 Gráficas (insertar imagen o link)
