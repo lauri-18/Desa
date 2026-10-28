@@ -31,7 +31,7 @@ Readme
 
 Evidencias de armado
 
-<img src="imagenes/Captura de pantalla (174).png" width="300">
+<img src="imagen/Captura de pantalla (174).png" width="300">
 
 resultados
 [residuo.pdf](reporte/residuo.pdf)
