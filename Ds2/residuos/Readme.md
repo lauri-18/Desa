@@ -2,8 +2,10 @@
 Clasificador de residuos por foto
 
 ## Descripción
-En esta práctica el equipo construye una página web donde cualquier persona elige una entidad y una
-inteligencia artificial le explica su IDH usando únicamente los datos oficiales del PNUD.
+En esta práctica el equipo construye un bot de Telegram que recibe la foto de un residuo y, con
+inteligencia artificial con visión, responde qué es, si se recicla, en qué contenedor va y cuánto tarda en
+degradarse. Después el equipo pone a prueba al bot y verifica sus respuestas contra fuentes confiables.
+
 ## Objetivos de aprendizaje
 Que el alumno identifique el impacto de los residuos que genera en su vida diaria, construya sin
 programar un clasificador de residuos con IA y evalúe la precisión de la IA comparándola con fuentes
@@ -29,7 +31,7 @@ Readme
 
 Evidencias de armado
 
-<img src="imagenes/Captura de pantalla (174).png" width="350">
+<img src="imagenes/Captura de pantalla (164).png" width="300">
 
 resultados
 [idh.pdf](reporte/idh.pdf)
