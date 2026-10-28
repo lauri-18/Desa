@@ -1,24 +1,23 @@
 ## Nombre del proyecto
-Página web IDH de mi estado
+Clasificador de residuos por foto
 
 ## Descripción
 En esta práctica el equipo construye una página web donde cualquier persona elige una entidad y una
 inteligencia artificial le explica su IDH usando únicamente los datos oficiales del PNUD.
 ## Objetivos de aprendizaje
-Que el alumno interprete el IDH y sus componentes para las entidades de México, construya sin
-programar una página web conectada a Make e IA que consulte datos oficiales, y verifique que la
-información generada por la IA sea fiel a la fuente.
+Que el alumno identifique el impacto de los residuos que genera en su vida diaria, construya sin
+programar un clasificador de residuos con IA y evalúe la precisión de la IA comparándola con fuentes
+oficiales.
 
 ## Material utilizado
-Computadora con navegador.
+Celular con Telegram y cámara.
 
 Cuenta de Make del curso (plan Pro). La IA usa la conexión Make&#39;s AI Provider; no se necesita
 API key.
 
-Cuenta en una IA generativa gratuita para generar la página.
+Computadora con navegador.
 
-Cuenta de GitHub con su repositorio de prácticas.
-
+10 residuos distintos de su casa o del campus para fotografiar
 
 Código
 [Readme.txt](codigo/Readme.txt))
