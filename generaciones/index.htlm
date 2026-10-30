@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estilos de vida entre generaciones</title>
+<style>
+  :root {
+    --bosque: #1f4d36;
+    --musgo: #5b8a4a;
+    --rio: #2f7f8a;
+    --tierra: #8a6a3d;
+    --hoja: #eef4e6;
+    --papel: #fbfcf7;
+    --tinta: #1d2b22;
+    --borde: #c9d9bd;
+    --aviso: #9a3b1f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    color: var(--tinta);
+    background: linear-gradient(180deg, var(--hoja) 0%, #dfeadb 100%);
+    min-height: 100vh;
+  }
+  header {
+    background: var(--bosque);
+    color: #f2f8ec;
+    padding: 2.5rem 1.25rem 2rem;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 .75rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    letter-spacing: .01em;
+  }
+  header p { max-width: 60ch; margin: 0 auto; color: #d6e6cf; }
+  main { max-width: 1200px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+  .columnas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    align-items: start;
+  }
+  .persona {
+    background: var(--papel);
+    border: 1px solid var(--borde);
+    border-top: 6px solid var(--musgo);
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+  .persona:nth-child(2) { border-top-color: var(--rio); }
+  .persona:nth-child(3) { border-top-color: var(--tierra); }
+  .persona h2 {
+    margin: 0 0 1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--bosque);
+    font-size: 1.4rem;
+  }
+  label { display: block; font-weight: 600; font-size: .92rem; margin: 1rem 0 .35rem; }
+  input, textarea {
+    width: 100%;
+    font: inherit;
+    padding: .55rem .65rem;
+    border: 1px solid #aebfa3;
+    border-radius: 6px;
+    background: #fff;
+    color: var(--tinta);
+  }
+  textarea { min-height: 5.5rem; resize: vertical; }
+  input:focus-visible, textarea:focus-visible, button:focus-visible {
+    outline: 3px solid var(--rio);
+    outline-offset: 2px;
+  }
+  .invalido { border-color: var(--aviso); background: #fff6f2; }
+  .acciones { margin-top: 1.75rem; text-align: center; }
+  button {
+    font: inherit;
+    font-weight: 700;
+    color: #fff;
+    background: var(--bosque);
+    border: 0;
+    border-radius: 999px;
+    padding: .8rem 2.2rem;
+    cursor: pointer;
+  }
+  button:hover:not(:disabled) { background: #173a29; }
+  button:disabled { background: #7f9a89; cursor: not-allowed; }
+  .mensaje { margin: 1rem auto 0; max-width: 60ch; }
+  .mensaje.aviso { color: var(--aviso); font-weight: 600; }
+  .mensaje.error { color: var(--aviso); font-weight: 600; }
+  .mensaje.espera { color: var(--bosque); }
+  #resultado {
+    max-width: 800px;
+    margin: 1.5rem auto 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--papel);
+    border: 1px solid var(--borde);
+    border-left: 6px solid var(--rio);
+    border-radius: 10px;
+    white-space: pre-line;
+  }
+  [hidden] { display: none !important; }
+  @media (max-width: 860px) {
+    .columnas { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Estilos de vida entre generaciones</h1>
+  <p>Se entrevistó a tres generaciones sobre sus hábitos de consumo para compararlos: cómo se alimentaban, qué hacían con sus cosas, cómo se movían y cuidaban los recursos.</p>
+</header>
+
+<main>
+  <div class="columnas" id="columnas"></div>
+
+  <div class="acciones">
+    <button type="button" id="btn">Comparar respuestas</button>
+    <div id="mensaje" class="mensaje" role="status" aria-live="polite" hidden></div>
+  </div>
+
+  <div id="resultado" hidden></div>
+</main>
+
+<script>
+  // Pega aquí la URL de tu webhook de Make:
+  const WEBHOOK_URL = "https://hook.us2.make.com/5me7sahbsd4ji791yfpmqmdlzc09knv1";
+
+  const PREGUNTAS = [
+    "¿Cómo se conseguía la comida en casa: mercado, tienda, súper o cultivo propio?",
+    "¿Qué se hacía con la ropa o los zapatos viejos o rotos?",
+    "¿Qué aparatos electrónicos tenías y cada cuánto los cambiabas?",
+    "¿Cómo te transportabas a la escuela o al trabajo?",
+    "¿Qué se hacía con la basura? ¿Se separaba o se reutilizaba algo?",
+    "¿Usabas bolsas, botellas o envases desechables?",
+    "¿Cómo se usaba y se cuidaba el agua en casa?",
+    "¿Qué consideras necesario para vivir bien?"
+  ];
+
+  const PERSONAS = [
+    { id: "abuelo", titulo: "Abuelo/a" },
+    { id: "padre",  titulo: "Padre/Madre" },
+    { id: "amigo",  titulo: "Amigo/a" }
+  ];
+
+  const columnas = document.getElementById("columnas");
+  const btn = document.getElementById("btn");
+  const mensaje = document.getElementById("mensaje");
+  const resultado = document.getElementById("resultado");
+
+  // Construye las tres secciones
+  PERSONAS.forEach(function (p) {
+    const sec = document.createElement("section");
+    sec.className = "persona";
+    let html = "<h2>" + p.titulo + "</h2>";
+    html += '<label for="' + p.id + '-edad">Edad</label>';
+    html += '<input type="number" min="0" max="120" id="' + p.id + '-edad">';
+    PREGUNTAS.forEach(function (q, i) {
+      html += '<label for="' + p.id + "-p" + (i + 1) + '">' + (i + 1) + ". " + q + "</label>";
+      html += '<textarea id="' + p.id + "-p" + (i + 1) + '"></textarea>';
+    });
+    sec.innerHTML = html;
+    columnas.appendChild(sec);
+  });
+
+  function mostrarMensaje(texto, tipo) {
+    mensaje.textContent = texto;
+    mensaje.className = "mensaje " + tipo;
+    mensaje.hidden = false;
+  }
+
+  // Revisa que todos los campos estén llenos y marca los vacíos
+  function validar() {
+    let completo = true;
+    document.querySelectorAll(".persona input, .persona textarea").forEach(function (campo) {
+      const vacio = campo.value.trim() === "";
+      campo.classList.toggle("invalido", vacio);
+      if (vacio) completo = false;
+    });
+    return completo;
+  }
+
+  // Arma el texto de una persona
+  function armarTexto(id) {
+    let texto = "Edad: " + document.getElementById(id + "-edad").value.trim();
+    PREGUNTAS.forEach(function (q, i) {
+      const r = document.getElementById(id + "-p" + (i + 1)).value.trim();
+      texto += "\n" + (i + 1) + ". " + q + ": " + r;
+    });
+    return texto;
+  }
+
+  btn.addEventListener("click", async function () {
+    resultado.hidden = true;
+
+    if (!validar()) {
+      mostrarMensaje("Faltan campos por llenar. Completa la edad y las 8 respuestas de las tres personas.",
