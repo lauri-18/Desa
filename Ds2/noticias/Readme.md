@@ -27,14 +27,14 @@ Código
 Video del funcionamiento
 Readme
 
-[Ver video en YouTube](https://youtube.com/shorts/OStg7xqduiA?si=BWuUOC6h_BjbWZTK)
+[Ver video en YouTube](https://youtube.com/shorts/zsZEgbATPIQ?si=XIA4DYS9aqQsZHU1)
 
 Evidencias de armado
 
 <img src="imagenes/Captura de pantalla (202).png" width="350">
 
 resultados
-[idh.pdf](reporte/idh.pdf)
+[clima.pdf](reporte/clima.pdf)
 
 
 Gráficas (insertar imagen o link)
