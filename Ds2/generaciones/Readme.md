@@ -38,7 +38,7 @@ Evidencias de armado
 <img src="imagenes/Captura de pantalla (187).png" width="350">
 
 resultados
-[idh.pdf](reporte/idh.pdf)
+[generaciones.pdf](reporte/generaciones.pdf)
 
 
 Gráficas (insertar imagen o link)
