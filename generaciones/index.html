@@ -199,4 +199,32 @@
     resultado.hidden = true;
 
     if (!validar()) {
-      mostrarMensaje("Faltan campos por llenar. Completa la edad y las 8 respuestas de las tres personas.",
+      mostrarMensaje("Faltan campos por llenar. Completa la edad y las 8 respuestas de las tres personas.", "aviso");
+      return;
+    }
+
+    const datos = new URLSearchParams();
+    datos.append("abuelo", armarTexto("abuelo"));
+    datos.append("padre", armarTexto("padre"));
+    datos.append("amigo", armarTexto("amigo"));
+
+    btn.disabled = true;
+    mostrarMensaje("Analizando respuestas, esto puede tardar unos segundos...", "espera");
+
+    try {
+      const respuesta = await fetch(WEBHOOK_URL, { method: "POST", body: datos });
+      if (!respuesta.ok) throw new Error("HTTP " + respuesta.status);
+      const texto = await respuesta.text();
+      mensaje.hidden = true;
+      resultado.textContent = texto;
+      resultado.hidden = false;
+      resultado.scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch (e) {
+      mostrarMensaje("No se pudo obtener el análisis, intenta de nuevo.", "error");
+    } finally {
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
