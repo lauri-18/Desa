@@ -31,7 +31,7 @@ Readme
 
 Evidencias de armado
 
-<img src="imagenes/Captura de pantalla (164).png" width="350">
+<img src="imagen/Captura de pantalla (233).png" width="350">
 
 resultados
 [idh.pdf](reporte/idh.pdf)
