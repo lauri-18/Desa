@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Huella energética de la nube</title>
+<style>
+  :root {
+    --bosque: #123a2c;
+    --hoja: #2e7d4f;
+    --musgo: #5f9b6e;
+    --agua: #dcefe8;
+    --niebla: #f3faf7;
+    --sol: #e9b949;
+    --tinta: #0f2a22;
+    --linea: #b9d8cc;
+    --error: #a63a2b;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--tinta);
+    background: var(--niebla);
+    line-height: 1.55;
+  }
+
+  .cabecera {
+    background: var(--bosque);
+    color: var(--niebla);
+    padding: 3.5rem 1.25rem 4.5rem;
+  }
+
+  .cabecera-interior,
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(2.1rem, 7vw, 3.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 0 0 1rem;
+  }
+
+  .cabecera p {
+    margin: 0;
+    max-width: 58ch;
+    font-size: 1.08rem;
+    color: #cfe6dc;
+  }
+
+  .cabecera .sol {
+    display: inline-block;
+    width: 3.2rem;
+    height: 0.35rem;
+    border-radius: 2px;
+    background: var(--sol);
+    margin-bottom: 1.25rem;
+  }
+
+  main { padding: 0 1.25rem 3rem; }
+
+  form {
+    background: #fff;
+    border: 1px solid var(--linea);
+    border-radius: 14px;
+    padding: 1.5rem 1.25rem 1.75rem;
+    margin-top: -2.5rem;
+    box-shadow: 0 10px 30px rgba(18, 58, 44, 0.12);
+  }
+
+  fieldset {
+    border: 0;
+    margin: 0 0 1.5rem;
+    padding: 0;
+  }
+
+  legend {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--bosque);
+    padding: 0;
+    margin-bottom: 0.75rem;
+    width: 100%;
+    border-bottom: 2px solid var(--agua);
+    padding-bottom: 0.4rem;
+  }
+
+  .campos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1rem 1.25rem;
+  }
+
+  .campo label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .campo .unidad {
+    display: block;
+    font-size: 0.85rem;
+    color: #45685b;
+    margin-bottom: 0.4rem;
+  }
+
+  input[type="number"] {
+    width: 100%;
+    font: inherit;
+    font-size: 1.05rem;
+    padding: 0.6rem 0.75rem;
+    color: var(--tinta);
+    background: var(--niebla);
+    border: 1.5px solid var(--linea);
+    border-radius: 8px;
+  }
+
+  input[type="number"]:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--sol);
+    outline-offset: 2px;
+  }
+
+  input[type="number"]:focus { border-color: var(--hoja); }
+
+  button {
+    display: block;
+    width: 100%;
+    font: inherit;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+    background: var(--hoja);
+    border: 0;
+    border-radius: 10px;
+    padding: 0.9rem 1.25rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  button:hover:not(:disabled) { background: var(--bosque); }
+
+  button:disabled {
+    background: var(--musgo);
+    cursor: wait;
+  }
+
+  .resultado {
+    margin-top: 1.5rem;
+    padding: 1.1rem 1.25rem;
+    background: var(--agua);
+    border-left: 6px solid var(--hoja);
+    border-radius: 0 10px 10px 0;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+    font-size: 1.02rem;
+  }
+
+  .resultado.error {
+    background: #fbe9e5;
+    border-left-color: var(--error);
+    color: var(--error);
+    font-weight: 600;
+  }
+
+  .resultado[hidden] { display: none; }
+
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.25rem 2.5rem;
+    font-size: 0.85rem;
+    color: #45685b;
+  }
+
+  @media (max-width: 480px) {
+    .cabecera { padding: 2.5rem 1rem 4rem; }
+    main { padding: 0 0.75rem 2rem; }
+    form { padding: 1.25rem 1rem 1.5rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    button { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="cabecera-interior">
+    <span class="sol" aria-hidden="true"></span>
+    <h1>Huella energética de la nube</h1>
+    <p>Cada acción digital, como ver un video, mandar un correo o preguntarle algo a un chatbot, se procesa en centros de datos que consumen energía. Esta página estima tu huella a partir de tus hábitos.</p>
+  </div>
+</header>
+
+<main>
+  <form id="formulario" novalidate>
+
+    <fieldset>
+      <legend>Ocio</legend>
+      <div class="campos">
+        <div class="campo">
+          <label for="video">Video en streaming</label>
+          <span class="unidad">Horas al día (YouTube, Netflix, TikTok)</span>
+          <input type="number" id="video" name="video" min="0" step="any" inputmode="decimal" placeholder="0">
+        </div>
+        <div class="campo">
+          <label for="musica">Música en streaming</label>
+          <span class="unidad">Horas al día</span>
+          <input type="number" id="musica" name="musica" min="0" step="any" inputmode="decimal" placeholder="0">
+        </div>
+        <div class="campo">
+          <label for="juegos">Juegos en línea</label>
+          <span class="unidad">Horas al día</span>
+          <input type="number" id="juegos" name="juegos" min="0" step="any" inputmode="decimal" placeholder="0">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Comunicación</legend>
+      <div class="campos">
+        <div class="campo">
+          <label for="redes">Redes sociales</label>
+          <span class="unidad">Horas al día</span>
+          <input type="number" id="redes" name="redes" min="0" step="any" inputmode="decimal" placeholder="0">
+        </div>
+        <div class="campo">
+          <label for="videollamadas">Videollamadas</label>
+          <span class="unidad">Horas a la semana</span>
+          <input type="number" id="videollamadas" name="videollamadas" min="0" step="any" inputmode="decimal" placeholder="0">
+        </div>
+        <div class="campo">
+          <label for="correos">Correos enviados</label>
+          <span class="unidad">Correos al día</span>
+          <input type="number" id="correos" name="correos" min="0" step="any" inputmode="decimal" placeholder="0">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Almacenamiento e inteligencia artificial</legend>
+      <div class="campos">
+        <div class="campo">
+          <label for="nube">Guardado en la nube</label>
+          <span class="unidad">GB (fotos, archivos)</span>
+          <input type="number" id="nube" name="nube" min="0" step="any" inputmode="decimal" placeholder="0">
+        </div>
+        <div class="campo">
+          <label for="ia">Chatbots de IA</label>
+          <span class="unidad">Consultas al día</span>
+          <input type="number" id="ia" name="ia" min="0" step="any" inputmode="decimal" placeholder="0">
+        </div>
+      </div>
+    </fieldset>
+
+    <button type="submit" id="boton">Calcular mi huella</button>
+
+    <div id="resultado" class="resultado" role="status" aria-live="polite" hidden></div>
+  </form>
+</main>
+
+<footer>
+  Es una estimación basada en promedios. Deja en blanco lo que no uses.
+</footer>
+
+<script>
+  // Pega aquí la URL de tu webhook de Make (módulo "Custom webhook").
+  const WEBHOOK_URL = "https://hook.us2.make.com/h4txa5d9ouxvx935u5jip21hzlpelwpb";
+
+  const CAMPOS = ["video", "musica", "redes", "videollamadas", "juegos", "nube", "ia", "correos"];
+
+  const formulario = document.getElementById("formulario");
+  const boton = document.getElementById("boton");
+  const resultado = document.getElementById("resultado");
+  const TEXTO_BOTON = "Calcular mi huella";
+
+  function mostrar(texto, esError) {
+    resultado.textContent = texto;
+    resultado.classList.toggle("error", Boolean(esError));
+    resultado.hidden = false;
+  }
+
+  formulario.addEventListener("submit", async function (evento) {
+    evento.preventDefault();
+
+    if (!formulario.checkValidity()) {
+      formulario.reportValidity();
+      return;
+    }
+
+    const datos = new URLSearchParams();
+    CAMPOS.forEach(function (nombre) {
+      const valor = formulario.elements[nombre].value.trim();
+      datos.append(nombre, valor === "" ? "0" : valor);
+    });
+
+    boton.disabled = true;
+    boton.textContent = "Calculando...";
+    mostrar("Calculando...", false);
+
+    try {
+      const respuesta = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        body: datos
+      });
+
+      if (!respuesta.ok) {
+        throw new Error("Respuesta " + respuesta.status);
+      }
+
+      const texto = await respuesta.text();
+      mostrar(texto, false);
+    } catch (error) {
+      mostrar("No se pudo calcular, intenta de nuevo.", true);
+    } finally {
+      boton.disabled = false;
+      boton.textContent = TEXTO_BOTON;
+    }
+  });
+</script>
+
+</body>
+</html>
