@@ -32,7 +32,7 @@ Evidencias de armado
 <img src="imagen/Captura de pantalla (249).png" width="300">
 
 resultados
-[idh.pdf](reporte/idh.pdf)
+[ecologica.pdf](reporte/ecologica.pdf)
 
 
 Gráficas (insertar imagen o link)
