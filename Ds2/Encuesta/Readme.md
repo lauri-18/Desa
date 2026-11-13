@@ -37,7 +37,7 @@ Evidencias de armado
 
 
 resultados
-[idh.pdf](reporte/idh.pdf)
+[reporte compras.pdf](reporte/reporte_compras.pdf)
 
 
 Gráficas (insertar imagen o link)
