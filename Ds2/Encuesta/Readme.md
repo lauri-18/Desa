@@ -37,7 +37,7 @@ Evidencias de armado
 
 
 resultados
-[reporte compras.pdf](reporte/reporte_compras.pdf)
+[reporte compras.pdf](reporte/reporte%20compras.pdf)
 
 
 Gráficas (insertar imagen o link)
