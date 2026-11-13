@@ -33,7 +33,7 @@ Evidencias de armado
 
 
 resultados
-[idh.pdf](reporte/idh.pdf)
+[energetica.pdf](reporte/energetica.pdf)
 
 
 Gráficas (insertar imagen o link)
