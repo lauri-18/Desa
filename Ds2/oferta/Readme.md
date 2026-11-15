@@ -34,7 +34,7 @@ Evidencias de armado
 
 <img src="imagen/Captura de pantalla (261).png" width="350">
 
-<img src="imagen/foto.jpeg" width="350">
+<img src="imagen/foto.jpeg" width="300">
 
 
 
