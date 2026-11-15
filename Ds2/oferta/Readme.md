@@ -32,7 +32,9 @@ Readme
 
 Evidencias de armado
 
-<img src="imagen/Captura de pantalla (256).png" width="350">
+<img src="imagen/Captura de pantalla (261).png" width="350">
+
+<img src="imagen/foto.png" width="350">
 
 
 
