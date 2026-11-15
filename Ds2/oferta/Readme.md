@@ -39,7 +39,7 @@ Evidencias de armado
 
 
 resultados
-[documento.pdf](reporte/documento.pdf)
+[simulador.pdf](reporte/simulador.pdf)
 
 
 Gráficas (insertar imagen o link)
